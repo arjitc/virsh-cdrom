@@ -10,15 +10,15 @@ ISO=$3
 
 if [[ -z "$ACTION" ]]
 then
-   echo "Error: unmount or mount is undefined \n"
-   echo "Example: \n"
-   echo "Mount: sh virsh-cdrom.sh mount GUEST_NAME ISO_NAME \n"
+   echo "Error: unmount or mount is undefined"
+   echo "Example:"
+   echo "Mount: sh virsh-cdrom.sh mount GUEST_NAME ISO_NAME"
    echo "Unmount: sh virsh-cdrom.sh unmount GUEST_NAME"
    exit
 fi
 if [ "$ACTION" == mount ]; then
 	# shutdown the guest
-	/usr/bin/virsh shutdown $GUEST
+	/usr/bin/virsh destroy $GUEST
 	# unmount any old ISO's
 	/usr/bin/virsh change-media $GUEST hdc --eject
 	# mount new ISO
@@ -32,7 +32,7 @@ if [ "$ACTION" == mount ]; then
 fi
 if [ "$ACTION" == unmount ]; then
 	# shutdown the guest
-	/usr/bin/virsh shutdown $GUEST
+	/usr/bin/virsh destroy $GUEST
 	# unmount any old ISO's
 	/usr/bin/virsh change-media $GUEST hdc --eject
 	# change boot order

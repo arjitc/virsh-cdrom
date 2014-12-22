@@ -10,3 +10,9 @@ then
    echo "Action - unmount or mount is missing"
    exit
 fi
+if [ "$action" == mount ]; then
+	echo "Mount!"
+fi
+if [ "$action" == unmount ]; then
+	echo "unount!"
+fi

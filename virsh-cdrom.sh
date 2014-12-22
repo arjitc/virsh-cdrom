@@ -13,7 +13,7 @@ then
    echo "Error: unmount or mount is undefined \n"
    echo "Example: \n"
    echo "Mount: sh virsh-cdrom.sh mount GUEST_NAME ISO_NAME \n"
-   echo "Unmount: sh virsh-cdrom.sh unmount GUEST_NAME ISO_NAME"
+   echo "Unmount: sh virsh-cdrom.sh unmount GUEST_NAME"
    exit
 fi
 if [ "$ACTION" == mount ]; then

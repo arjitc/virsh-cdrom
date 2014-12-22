@@ -5,13 +5,16 @@ CONFIG_LOCATION="/etc/libvirt/qemu"
 ISO_LOCATION="/var/lib/libvirt/images/"
 
 action=$1
+if [[ -z "$action" ]]
+then
+   echo "Action - unmount or mount is missing"
+   exit
+fi
 if [ $action == "mount" ]
 then
    echo "a is equal to b"
+fi
 if [ $action == "unmount" ]
 then
    echo "a is not equal to b"
-if [[ -z "$action" ]]
-then
-  echo "Action - unmount or mount is missing"
-fi
+fi   

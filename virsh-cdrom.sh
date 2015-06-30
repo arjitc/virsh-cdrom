@@ -24,6 +24,14 @@ then
    echo "Unmount: sh virsh-cdrom.sh unmount GUEST_NAME"
    exit
 fi
+if [[ -z "$ISO" ]]
+then
+   echo "Error: ISO mount name undefined"
+   echo "Example:"
+   echo "Mount: sh virsh-cdrom.sh mount GUEST_NAME ISO_NAME"
+   echo "Unmount: sh virsh-cdrom.sh unmount GUEST_NAME"
+   exit
+fi
 if [ "$ACTION" == mount ]; then
 	# shutdown the guest
 	/usr/bin/virsh destroy $GUEST

@@ -2,7 +2,7 @@
 ## The folder under which your KVM configuration files exist, no trailing slash
 CONFIG_LOCATION="/etc/libvirt/qemu"
 ## The folder under which your ISO files exist, no trailing slash
-ISO_LOCATION="/var/lib/libvirt/images"
+ISO_LOCATION="/var/lib/libvirt/boot"
 
 ACTION=$1
 GUEST=$2
